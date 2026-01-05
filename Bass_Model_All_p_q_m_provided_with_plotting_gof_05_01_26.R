@@ -3,19 +3,22 @@ library(readr)
 library(ggplot2)
 
 # Folders to save plots and vcov matrices
-output_folder <- "Results_output_01_2026e"
-vcov_folder   <- "vcovs_01_01_2026"
+output_folder <- "Results_output_05_01_2026_sales"
+vcov_folder   <- "vcovs_05_01_2026_sales"
 if (!dir.exists(output_folder)) dir.create(output_folder)
 if (!dir.exists(vcov_folder))   dir.create(vcov_folder)
 
 # File names
-txt_file_name <- "results_txt_m_p_q_provided_90_perc_01_01_26e.txt"
-csv_name      <- "results_csv_m_p_q_provided_90_perc_01_01_26e.csv"
+txt_file_name <- "results_txt_m_p_q_provided_90_perc_05_01_26_sales.txt"
+csv_name      <- "results_csv_m_p_q_provided_90_perc_05_01_26_sales.csv"
 
 # Read input data
 bass_input   <- read_csv("bass_input_rev2.csv")
 market_sizes <- read_csv("market_size_90_perc_correct_rev2.csv")      # must include ZoneID & Total
-start_params <- read_csv("best_parameter_market_size_90_perc_correct_rev2.csv.csv")
+start_params <- read_csv("best_parameter_market_size_90_perc_correct_rev2.csv_20260104_060925_sales.csv")
+
+# Parameter to determine whether to use market shares or set to 1
+mkt_share_model <- FALSE
 
 # Bass model function
 c_t <- function(x, p, q, m) {
@@ -56,7 +59,12 @@ for (zone in zone_list) {
   # print(input_data$months_passed_01_2021)
   
   # market size and starting values
-  m_value <- market_sizes %>% filter(ZoneID == zone) %>% pull(Total) %>% first()
+  if (mkt_share_model) {
+    m_value <- 1
+  } else {
+    m_value <- market_sizes %>% filter(ZoneID == zone) %>% pull(Total) %>% first()
+  }
+  
   p_start <- start_params %>% filter(ZoneID == zone)  %>% pull(p)
   q_start <- start_params %>% filter(ZoneID == zone)  %>% pull(q)
   
@@ -84,9 +92,15 @@ for (zone in zone_list) {
   
   input_data <- input_data %>% mutate(m_fixed = m_value)
   
+  if (mkt_share_model) {
+    dep_var <- input_data$`2021-2024_share_capped`
+  } else {
+    dep_var <- input_data$`2021-2024`
+  }
+  
   # Fit model
   fit <- tryCatch(
-    nls(`2021-2024` ~ c_t(months_passed_01_2021, p, q, m_fixed),
+    nls(dep_var ~ c_t(months_passed_01_2021, p, q, m_fixed),
         data      = input_data,
         start     = list(p = p_start, q = q_start),
         algorithm = "port",
@@ -109,7 +123,7 @@ for (zone in zone_list) {
   capture.output(fit_sum, file = txt_conn, append = TRUE)
   
   # 2) Goodness-of-fit
-  observed  <- input_data$`2021-2024`
+  observed  <- dep_var
   predicted <- predict(fit, newdata = input_data)
   sse       <- sum((observed - predicted)^2)
   sst       <- sum((observed - mean(observed))^2)
