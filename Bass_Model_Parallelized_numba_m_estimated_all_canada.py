@@ -64,6 +64,8 @@ def main(output_filename, bass_input_name):
         df_zone = bass_input[bass_input['ZoneID'] == zone]
         x = df_zone.loc[(df_zone['months_passed_01_2021'] > 0)|(df_zone['2021-2024'] > 0), 'months_passed_01_2021'].values.astype(np.float64)
         y = df_zone.loc[(df_zone['months_passed_01_2021'] > 0)|(df_zone['2021-2024'] > 0), '2021-2024_Total_EV_Sales'].values.astype(np.float64)
+        # x = df_zone.loc[(df_zone['months_passed_01_2021'] > 0), 'months_passed_01_2021'].values.astype(np.float64)
+        # y = df_zone.loc[(df_zone['months_passed_01_2021'] > 0), '2021-2024_Total_EV_Sales'].values.astype(np.float64)
         if x.size == 0 or y.size == 0:
             print(f"No data for zone {zone}, skipping.")
             continue
