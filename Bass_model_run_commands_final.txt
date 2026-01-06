@@ -1,0 +1,5 @@
+conda activate geopandas_env_kiko39
+cd C:\Users\kikomwen\Documents\AutoTrader
+python Bass_Model_Parallelized_numba5.py market_size_90_perc_correct_rev2.csv bass_input_rev2_b.csv
+python Bass_Model_Parallelized_numba4.py market_size_90_perc_correct_rev2.csv bass_input_rev2.csv
+python Bass_Model_Parallelized_numba3_m_estimated.py start_values_hev_b bass_input_all_canada_new_with_tesla.csv
