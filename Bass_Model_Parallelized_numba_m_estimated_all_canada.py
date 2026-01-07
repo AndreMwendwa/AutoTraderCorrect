@@ -47,7 +47,7 @@ class PyGMOBassProblem:
         # p and q between 0 and 1
         return ([0.0, 0.0, 1.0], [1.0, 1.0, 100000.0])
 
-def main(output_filename, bass_input_name):
+def main(output_filename, bass_input_name, col_name='2021-2024_Total_EV_Sales', months_col='months_passed_01_2021'):
     # Read input data
     bass_input = pd.read_csv(bass_input_name)
 
@@ -62,8 +62,8 @@ def main(output_filename, bass_input_name):
     for zone in bass_input['ZoneID'].unique():
         print(time.ctime())
         df_zone = bass_input[bass_input['ZoneID'] == zone]
-        x = df_zone.loc[(df_zone['months_passed_01_2021'] > 0)|(df_zone['2021-2024'] > 0), 'months_passed_01_2021'].values.astype(np.float64)
-        y = df_zone.loc[(df_zone['months_passed_01_2021'] > 0)|(df_zone['2021-2024'] > 0), '2021-2024_Total_EV_Sales'].values.astype(np.float64)
+        x = df_zone.loc[(df_zone[months_col] > 0)|(df_zone['2021-2024'] > 0), months_col].values.astype(np.float64)
+        y = df_zone.loc[(df_zone[months_col] > 0)|(df_zone['2021-2024'] > 0), col_name].values.astype(np.float64)
         # x = df_zone.loc[(df_zone['months_passed_01_2021'] > 0), 'months_passed_01_2021'].values.astype(np.float64)
         # y = df_zone.loc[(df_zone['months_passed_01_2021'] > 0), '2021-2024_Total_EV_Sales'].values.astype(np.float64)
         if x.size == 0 or y.size == 0:
@@ -93,7 +93,10 @@ def main(output_filename, bass_input_name):
     print(f"Best parameters (p, q) saved to '{out_file}'")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) < 3:
         print("Usage: python Bass_Model_Parallelized_numba.py <market_size_file>")
         sys.exit(1)
-    main(sys.argv[1], sys.argv[2])
+    if len(sys.argv) == 3:
+        main(sys.argv[1], sys.argv[2])
+    else:
+        main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
