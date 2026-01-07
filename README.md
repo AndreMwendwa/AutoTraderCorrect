@@ -9,6 +9,7 @@ Order of running files for the zonal model:
 - Bass_Model_All_p_q_m_provided_with_plotting_gof_05_01_26.R
 - Merging_census_zones.ipynb
 - charging_stns_per_area.ipynb
+- Zonal_search_distances.ipynb
 - Regressing_Params_07_01_26.R
 
 Running order for All Canada Bass model:
