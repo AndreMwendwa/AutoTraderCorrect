@@ -8,6 +8,7 @@ Order of running files for the zonal model:
 - Bass_Model_Parallelized_numba_zonal_sales.py
 - Bass_Model_All_p_q_m_provided_with_plotting_gof_05_01_26.R
 - Merging_census_zones.ipynb
+- charging_stns_per_area.ipynb
 
 Running order for All Canada Bass model:
 
