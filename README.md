@@ -17,9 +17,11 @@ Running order for All Canada Bass model:
 - Bass_Model_Data_All_Canada_new_with_Tesla.ipynb
 - Bass_Model_Parallelized_numba_m_estimated_all_canada.py
 - Bass_Model_All_p_q_m_provided_all_canada_with_plotting_gof_pqmsim_07_01_26.R
+- Simulation_05_01_26.ipynb
 
 Running order for All Canada Logistic Model:
 
 - Bass_Model_Data_All_Canada_all_with_Tesla.ipynb
 - Logistic_Model_Parallelized_numba_m_estimated.py
--
+- Logistic_Model_All_p_q_m_provided_all_canada_with_plotting_gof_pqmsim_07_01_26.R
+- Simulation_05_01_26.ipynb
