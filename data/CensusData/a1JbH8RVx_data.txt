@@ -1,0 +1,4 @@
+2021 Census Profiles Files / Profile of Forward Sortation Areas (FSA)
+COL0 - GEO UID
+COL1 - FSA name
+COL2 - Population and dwelling counts / Population, 2021

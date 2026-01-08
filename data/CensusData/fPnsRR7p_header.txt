@@ -1,0 +1,30 @@
+2021 Census Profiles Files / Profile of Census Disseminations Areas
+COL0 - GEO UID
+COL1 - DA name
+COL2 - Population and dwelling counts / Population, 2021
+COL3 - Population and dwelling counts / Population density per square kilometre
+COL4 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes
+COL5 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 0 to 14 years ; Both sexes
+COL6 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 15 to 19 years ; Both sexes
+COL7 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 20 to 24 years ; Both sexes
+COL8 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 25 to 29 years ; Both sexes
+COL9 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 30 to 34 years ; Both sexes
+COL10 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 35 to 39 years ; Both sexes
+COL11 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 40 to 44 years ; Both sexes
+COL12 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 45 to 49 years ; Both sexes
+COL13 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 50 to 54 years ; Both sexes
+COL14 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 55 to 59 years ; Both sexes
+COL15 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 15 to 64 years ; Both sexes / 60 to 64 years ; Both sexes
+COL16 - Age & Sex - Both sexes / Total - Age groups of the population - 100% data ; Both sexes / 65 years and over ; Both sexes
+COL17 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes
+COL18 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / Under $10,000 (including loss) ; Both sexes
+COL19 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $10,000 to $19,999 ; Both sexes
+COL20 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $20,000 to $29,999 ; Both sexes
+COL21 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $30,000 to $39,999 ; Both sexes
+COL22 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $40,000 to $49,999 ; Both sexes
+COL23 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $50,000 to $59,999 ; Both sexes
+COL24 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $60,000 to $69,999 ; Both sexes
+COL25 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $70,000 to $79,999 ; Both sexes
+COL26 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $80,000 to $89,999 ; Both sexes
+COL27 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $90,000 to $99,999 ; Both sexes
+COL28 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $100,000 and over ; Both sexes

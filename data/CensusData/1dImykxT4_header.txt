@@ -1,0 +1,47 @@
+2021 Census Profiles Files / Profile of Census Disseminations Areas
+COL0 - GEO UID
+COL1 - Province name
+COL2 - CD code
+COL3 - CD name
+COL4 - DA name
+COL5 - Income - Total Sex / Total - Income statistics in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / Number of total income recipients aged 15 years and over in private households in 2020 - 100% data ; Both sexes / Median total income in 2020 among recipients ($) ; Both sexes
+COL6 - Income - Total Sex / Total - Income statistics in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / Number of after-tax income recipients aged 15 years and over in private households in 2020 - 100% data ; Both sexes / Median after-tax income in 2020 among recipients ($) ; Both sexes
+COL7 - Housing - Total Sex / Total - Private households by tenure - 25% sample data / Owner
+COL8 - Housing - Total Sex / Total - Private households by tenure - 25% sample data / Renter
+COL9 - Education - Total Sex / Total - Highest certificate, diploma or degree for the population aged 15 years and over in private households - 25% sample data ; Both sexes
+COL10 - Education - Total Sex / Total - Highest certificate, diploma or degree for the population aged 15 years and over in private households - 25% sample data ; Both sexes / No certificate, diploma or degree ; Both sexes
+COL11 - Education - Total Sex / Total - Highest certificate, diploma or degree for the population aged 15 years and over in private households - 25% sample data ; Both sexes / High (secondary) school diploma or equivalency certificate ; Both sexes
+COL12 - Education - Total Sex / Total - Highest certificate, diploma or degree for the population aged 15 years and over in private households - 25% sample data ; Both sexes / Postsecondary certificate, diploma or degree ; Both sexes / Bachelor's degree or higher ; Both sexes
+COL13 - Journey to Work - Total Sex / Total - Commuting destination for the employed labour force aged 15 years and over with a usual place of work - 25% sample data ; Both sexes
+COL14 - Journey to Work - Total Sex / Total - Commuting destination for the employed labour force aged 15 years and over with a usual place of work - 25% sample data ; Both sexes / Commute within census subdivision (CSD) of residence ; Both sexes
+COL15 - Journey to Work - Total Sex / Total - Commuting destination for the employed labour force aged 15 years and over with a usual place of work - 25% sample data ; Both sexes / Commute to a different census subdivision (CSD) within census division (CD) of residence ; Both sexes
+COL16 - Journey to Work - Total Sex / Total - Commuting destination for the employed labour force aged 15 years and over with a usual place of work - 25% sample data ; Both sexes / Commute to a different census subdivision (CSD) and census division (CD) within province or territory of residence ; Both sexes
+COL17 - Journey to Work - Total Sex / Total - Commuting destination for the employed labour force aged 15 years and over with a usual place of work - 25% sample data ; Both sexes / Commute to a different province or territory ; Both sexes
+COL18 - Journey to Work - Total Sex / Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes
+COL19 - Journey to Work - Total Sex / Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / Car, truck or van ; Both sexes
+COL20 - Journey to Work - Total Sex / Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / Public transit ; Both sexes
+COL21 - Journey to Work - Total Sex / Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / Walked ; Both sexes
+COL22 - Journey to Work - Total Sex / Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / Bicycle ; Both sexes
+COL23 - Journey to Work - Total Sex / Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / Other method ; Both sexes
+COL24 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes
+COL25 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / Less than 15 minutes ; Both sexes
+COL26 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / 15 to 29 minutes ; Both sexes
+COL27 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / 30 to 44 minutes ; Both sexes
+COL28 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / 45 to 59 minutes ; Both sexes
+COL29 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / 60 minutes and over ; Both sexes
+COL30 - Population and dwelling counts / Population density per square kilometre
+COL31 - Population and dwelling counts / Population, 2021
+COL32 - Population and dwelling counts / Land area in square kilometres
+COL33 - Age & Sex - Both sexes / Median age of the population ; Both sexes
+COL34 - Income - Total Sex / Total - Total income groups in 2020 for the population aged 15 years and over in private households - 100% data ; Both sexes / With total income ; Both sexes / $100,000 and over ; Both sexes
+COL35 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes
+COL36 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 0 Legislative and senior management occupations ; Both sexes
+COL37 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 1 Business, finance and administration occupations ; Both sexes
+COL38 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 2 Natural and applied sciences and related occupations ; Both sexes
+COL39 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 3 Health occupations ; Both sexes
+COL40 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 4 Occupations in education, law and social, community and government services ; Both sexes
+COL41 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 5 Occupations in art, culture, recreation and sport ; Both sexes
+COL42 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 6 Sales and service occupations ; Both sexes
+COL43 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 7 Trades, transport and equipment operators and related occupations ; Both sexes
+COL44 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 9 Occupations in manufacturing and utilities ; Both sexes
+COL45 - Labour - Total Sex / Total - Labour force aged 15 years and over by occupation - Broad category - National Occupational Classification (NOC) 2021 - 25% sample data ; Both sexes / All occupations ; Both sexes / 8 Natural resources, agriculture and related production occupations ; Both sexes

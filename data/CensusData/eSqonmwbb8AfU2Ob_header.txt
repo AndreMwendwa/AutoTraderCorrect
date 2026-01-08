@@ -1,0 +1,61 @@
+2021 Census Profiles Files / Profile of Forward Sortation Areas (FSA)
+COL0 - GEO UID
+COL1 - FSA name
+COL2 - Age & Sex - Both sexes / Median age of the population ; Both sexes
+COL3 - Dwelling characteristics / Total - Occupied private dwellings by structural type of dwelling - 100% data / Single-detached house
+COL4 - Dwelling characteristics / Total - Occupied private dwellings by structural type of dwelling - 100% data / Semi-detached house
+COL5 - Dwelling characteristics / Total - Occupied private dwellings by structural type of dwelling - 100% data / Row house
+COL6 - Dwelling characteristics / Total - Occupied private dwellings by structural type of dwelling - 100% data / Apartment or flat in a duplex
+COL7 - Dwelling characteristics / Total - Occupied private dwellings by structural type of dwelling - 100% data / Apartment in a building that has fewer than five storeys
+COL8 - Dwelling characteristics / Total - Occupied private dwellings by structural type of dwelling - 100% data / Apartment in a building that has five or more storeys
+COL9 - Dwelling characteristics / Total - Occupied private dwellings by structural type of dwelling - 100% data / Other single-attached house
+COL10 - Dwelling characteristics / Total - Occupied private dwellings by structural type of dwelling - 100% data / Movable dwelling
+COL11 - Dwelling characteristics / Average household size
+COL12 - Income - Total Sex / Total - Income statistics in 2019 for the population aged 15 years and over in private households - 100% data ; Both sexes / Number of after-tax income recipients aged 15 years and over in private households in 2019 - 100% data ; Both sexes / Median after-tax income in 2019 among recipients ($) ; Both sexes
+COL13 - Income - Total Sex / Total - Income statistics in 2019 for the population aged 15 years and over in private households - 100% data ; Both sexes / Number of total income recipients aged 15 years and over in private households in 2019 - 100% data ; Both sexes / Median total income in 2019 among recipients ($) ; Both sexes
+COL14 - Immigration - Total Sex / Total - Immigrant status and period of immigration for the population in private households - 25% sample data ; Both sexes
+COL15 - Immigration - Total Sex / Total - Immigrant status and period of immigration for the population in private households - 25% sample data ; Both sexes / Non-immigrants ; Both sexes
+COL16 - Immigration - Total Sex / Total - Immigrant status and period of immigration for the population in private households - 25% sample data ; Both sexes / Immigrants ; Both sexes
+COL17 - Immigration - Total Sex / Total - Immigrant status and period of immigration for the population in private households - 25% sample data ; Both sexes / Non-permanent residents ; Both sexes
+COL18 - Immigration - Total Sex / Total - Generation status for the population in private households - 25% sample data ; Both sexes
+COL19 - Immigration - Total Sex / Total - Generation status for the population in private households - 25% sample data ; Both sexes / First generation ; Both sexes
+COL20 - Immigration - Total Sex / Total - Generation status for the population in private households - 25% sample data ; Both sexes / Second generation ; Both sexes
+COL21 - Immigration - Total Sex / Total - Generation status for the population in private households - 25% sample data ; Both sexes / Third generation or more ; Both sexes
+COL22 - Immigration - Total Sex / Total - Admission category and applicant type for the immigrant population in private households who were admitted between 1980 and 2021 - 25% sample data ; Both sexes
+COL23 - Immigration - Total Sex / Total - Admission category and applicant type for the immigrant population in private households who were admitted between 1980 and 2021 - 25% sample data ; Both sexes / Economic immigrants ; Both sexes
+COL24 - Immigration - Total Sex / Total - Admission category and applicant type for the immigrant population in private households who were admitted between 1980 and 2021 - 25% sample data ; Both sexes / Immigrants sponsored by family ; Both sexes
+COL25 - Immigration - Total Sex / Total - Admission category and applicant type for the immigrant population in private households who were admitted between 1980 and 2021 - 25% sample data ; Both sexes / Refugees ; Both sexes
+COL26 - Immigration - Total Sex / Total - Admission category and applicant type for the immigrant population in private households who were admitted between 1980 and 2021 - 25% sample data ; Both sexes / Other immigrants ; Both sexes
+COL27 - Housing - Total Sex / Total - Private households by tenure - 25% sample data
+COL28 - Housing - Total Sex / Total - Private households by tenure - 25% sample data / Owner
+COL29 - Housing - Total Sex / Total - Private households by tenure - 25% sample data / Renter
+COL30 - Housing - Total Sex / Total - Private households by tenure - 25% sample data / Dwelling provided by the local government, First Nation or Indian band
+COL31 - Housing - Total Sex / Total - Occupied private dwellings by condominium status - 25% sample data
+COL32 - Housing - Total Sex / Total - Occupied private dwellings by condominium status - 25% sample data / Condominium
+COL33 - Housing - Total Sex / Total - Occupied private dwellings by condominium status - 25% sample data / Not condominium
+COL34 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data
+COL35 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 1960 or before
+COL36 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 1961 to 1980
+COL37 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 1981 to 1990
+COL38 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 1991 to 2000
+COL39 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 2001 to 2005
+COL40 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 2006 to 2010
+COL41 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 2011 to 2015
+COL42 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 2016 to 2021
+COL43 - Housing - Total Sex / Total - Owner and tenant households with household total income greater than zero, in non-farm, non-reserve private dwellings by shelter-cost-to-income ratio - 25% sample data
+COL44 - Housing - Total Sex / Total - Owner and tenant households with household total income greater than zero, in non-farm, non-reserve private dwellings by shelter-cost-to-income ratio - 25% sample data / Spending less than 30% of income on shelter costs
+COL45 - Housing - Total Sex / Total - Owner and tenant households with household total income greater than zero, in non-farm, non-reserve private dwellings by shelter-cost-to-income ratio - 25% sample data / Spending 30% or more of income on shelter costs
+COL46 - Housing - Total Sex / Total - Tenant households in non-farm, non-reserve private dwellings - 25% sample data
+COL47 - Housing - Total Sex / Total - Tenant households in non-farm, non-reserve private dwellings - 25% sample data / % of tenant households in subsidized housing
+COL48 - Housing - Total Sex / Total - Tenant households in non-farm, non-reserve private dwellings - 25% sample data / % of tenant households spending 30% or more of its income on shelter costs
+COL49 - Housing - Total Sex / Total - Tenant households in non-farm, non-reserve private dwellings - 25% sample data / % in core housing need
+COL50 - Housing - Total Sex / Total - Tenant households in non-farm, non-reserve private dwellings - 25% sample data / Median monthly shelter costs for rented dwellings ($)
+COL51 - Housing - Total Sex / Total - Tenant households in non-farm, non-reserve private dwellings - 25% sample data / Average monthly shelter costs for rented dwellings ($)
+COL52 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes
+COL53 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / Less than 15 minutes ; Both sexes
+COL54 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / 15 to 29 minutes ; Both sexes
+COL55 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / 30 to 44 minutes ; Both sexes
+COL56 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / 45 to 59 minutes ; Both sexes
+COL57 - Journey to Work - Total Sex / Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data ; Both sexes / 60 minutes and over ; Both sexes
+COL58 - Age & Sex - Males / Total - Age groups of the population - 100% data ; Males
+COL59 - Age & Sex - Females / Total - Age groups of the population - 100% data ; Females

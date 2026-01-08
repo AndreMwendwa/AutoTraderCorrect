@@ -1,0 +1,31 @@
+Code - Name
+COL0 - GEO UID
+COL1 - Province name
+COL2 - CD code
+COL3 - CD name
+COL4 - DA name
+COL5 -  Median total income in 2020 among recipients ($) ; Both sexes
+COL6 - Median after-tax income in 2020 among recipients ($) ; Both sexes
+COL7 - Housing: Owner
+COL8 - Housing: Renter
+COL9 - Education :- Total Both sexes
+COL10 - Education :- No certificate, diploma or degree ; Both sexes
+COL11 - Education :- High (secondary) school diploma or equivalency certificate ; Both sexes
+COL12 - Education :- Bachelor's degree or higher ; Both sexes
+COL13 - Journey to Work :- Total
+COL14 - Journey to Work :- Commute within census subdivision (CSD) of residence ; Both sexes
+COL15 - Journey to Work :- Commute to a different census subdivision (CSD) within census division (CD) of residence ; Both sexes
+COL16 - Journey to Work :- Commute to a different census subdivision (CSD) and census division (CD) within province or territory of residence ; Both sexes
+COL17 - Journey to Work :- Commute to a different province or territory ; Both sexes
+COL18 - Journey to Work :- Total Both sexes
+COL19 - Journey to Work :- Car, truck or van ; Both sexes
+COL20 - Journey to Work :- Public transit ; Both sexes
+COL21 - Journey to Work :- Walked ; Both sexes
+COL22 - Journey to Work :- Bicycle ; Both sexes
+COL23 - Journey to Work :- Other method ; Both sexes
+COL24 - Commuting duration Both sexes
+COL25 - Commuting duration Less than 15 minutes ; Both sexes
+COL26 - Commuting duration 15 to 29 minutes ; Both sexes
+COL27 - Commuting duration 30 to 44 minutes ; Both sexes
+COL28 - Commuting duration 45 to 59 minutes ; Both sexes
+COL29 - Commuting duration 60 minutes and over ; Both sexes

@@ -1,0 +1,16 @@
+2021 Census Profiles Files / Profile of Census Disseminations Areas
+COL0 - GEO UID
+COL1 - Province name
+COL2 - DA name
+COL3 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data
+COL4 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 1960 or before
+COL5 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 1961 to 1980
+COL6 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 1981 to 1990
+COL7 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 1991 to 2000
+COL8 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 2001 to 2005
+COL9 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 2006 to 2010
+COL10 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 2011 to 2015
+COL11 - Housing - Total Sex / Total - Occupied private dwellings by period of construction - 25% sample data / 2016 to 2021
+COL12 - Housing - Total Sex / Total - Occupied private dwellings by condominium status - 25% sample data
+COL13 - Housing - Total Sex / Total - Occupied private dwellings by condominium status - 25% sample data / Condominium
+COL14 - Housing - Total Sex / Total - Occupied private dwellings by condominium status - 25% sample data / Not condominium
