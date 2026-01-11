@@ -8,3 +8,4 @@ track filter=lfs diff=lfs merge=lfs -text
 data/Canada_Combined/Canada_Combined.shp filter=lfs diff=lfs merge=lfs -text
 *.dbf filter=lfs diff=lfs merge=lfs -text
 *.shx filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
