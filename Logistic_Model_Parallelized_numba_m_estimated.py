@@ -1,17 +1,16 @@
+
 import pygmo as pg
 import pandas as pd
 import numpy as np
 import sys
 from numba import jit
 import time
-
 # On Windows, limit mp_island process pool size to avoid the HANDLE limit of WaitForMultipleObjects (64 handles)
 try:
     # Initialise a global pool of 60 processes (<=61 to allow auxiliary handles)
     pg.mp_island.init_pool(processes=60)
 except Exception:
     pass
-
 # JIT-compiled fitness evaluator (no Python object references)
 @jit(nopython=True)
 def fitness_nb(dv, t_data, X_data):
@@ -27,62 +26,50 @@ def fitness_nb(dv, t_data, X_data):
         diff = X_data[i] - pred
         rss += diff * diff
     return rss
-
 class PyGMOBassProblem:
     def __init__(self, x, y):
         # assume x and y are numpy.float64 arrays
         self.x_data = x
         self.y_data = y
-
-
     def fitness(self, dv):
         # Call the jitted function and return a 1-element list for PyGMO
         rss = fitness_nb(dv, self.x_data, self.y_data)
         return [rss]
-
     def get_bounds(self):
         # p and q between 0 and 1
         return ([0.0, 0.0, 0.0], [10E6, 10, 200])
 
-def main(output_filename, bass_input_name):
+def main(output_filename, bass_input_name, col_name='2021-2024_Total_EV_Sales', months_col='months_passed_01_2021'):
     # Read input data
     bass_input = pd.read_csv(bass_input_name)
-
     # PSO settings
     # PSO_GENERATIONS = 5000
     # POPULATION_SIZE = 2000
     PSO_GENERATIONS = 5000
     POPULATION_SIZE = 2000
-
     results = []
-
     for zone in bass_input['ZoneID'].unique():
         print(time.ctime())
         df_zone = bass_input[bass_input['ZoneID'] == zone]
-        df_zone['cumsum'] = df_zone['2021-2024_Total_EV_Sales'].cumsum()
-        x = df_zone.loc[(df_zone['months_passed_01_2021'] > 0)|(df_zone['2021-2024'] > 0), 'months_passed_01_2021'].values.astype(np.float64)
-        y = df_zone.loc[(df_zone['months_passed_01_2021'] > 0)|(df_zone['2021-2024'] > 0), 'cumsum'].values.astype(np.float64)
+        df_zone['cumsum'] = df_zone[col_name].cumsum()
+        x = df_zone.loc[(df_zone[months_col] > 0) & (df_zone[col_name] > 0), months_col].values.astype(np.float64)
+        y = df_zone.loc[(df_zone[months_col] > 0) & (df_zone[col_name] > 0), 'cumsum'].values.astype(np.float64)
         if x.size == 0 or y.size == 0:
             print(f"No data for zone {zone}, skipping.")
             continue
-        
-
         # Set up optimization problem
         problem = pg.problem(PyGMOBassProblem(x, y))
         algo = pg.algorithm(pg.pso(gen=PSO_GENERATIONS))
         archi = pg.archipelago(n=64, algo=algo, prob=problem, pop_size=POPULATION_SIZE)
         archi.evolve()
         archi.wait()
-
         champions_x = archi.get_champions_x()
         champions_f = archi.get_champions_f()
         best_idx = np.argmin(champions_f)
         a_opt, b_opt, c_opt = champions_x[best_idx]
-
         # Record results
         results.append({'ZoneID': zone, 'a': a_opt, 'b': b_opt, 'c': c_opt})
         print(f"Zone {zone}: p={a_opt:.6f}, q={b_opt:.6f}, m={c_opt:.2f}")
-
     # Save results (p and q only)
     results_df = pd.DataFrame(results)
     out_file = f'best_parameter_{output_filename}.csv'
@@ -90,7 +77,10 @@ def main(output_filename, bass_input_name):
     print(f"Best parameters (p, q) saved to '{out_file}'")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) < 3:
         print("Usage: python Bass_Model_Parallelized_numba.py <market_size_file>")
         sys.exit(1)
-    main(sys.argv[1], sys.argv[2])
+    if len(sys.argv) == 3:
+        main(sys.argv[1], sys.argv[2])
+    else:
+        main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])

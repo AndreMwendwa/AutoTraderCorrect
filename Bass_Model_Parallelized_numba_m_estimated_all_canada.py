@@ -45,7 +45,7 @@ class PyGMOBassProblem:
 
     def get_bounds(self):
         # p and q between 0 and 1
-        return ([0.0, 0.0, 1.0], [1.0, 1.0, 100000.0])
+        return ([0.0, 0.0, 1.0], [1.0, 1.0, 10000000.0])
 
 def main(output_filename, bass_input_name, col_name='2021-2024_Total_EV_Sales', months_col='months_passed_01_2021'):
     # Read input data
@@ -62,8 +62,8 @@ def main(output_filename, bass_input_name, col_name='2021-2024_Total_EV_Sales', 
     for zone in bass_input['ZoneID'].unique():
         print(time.ctime())
         df_zone = bass_input[bass_input['ZoneID'] == zone]
-        x = df_zone.loc[(df_zone[months_col] > 0)|(df_zone['2021-2024'] > 0), months_col].values.astype(np.float64)
-        y = df_zone.loc[(df_zone[months_col] > 0)|(df_zone['2021-2024'] > 0), col_name].values.astype(np.float64)
+        x = df_zone.loc[(df_zone[months_col] > 0)|(df_zone[col_name] > 0), months_col].values.astype(np.float64)
+        y = df_zone.loc[(df_zone[months_col] > 0)|(df_zone[col_name] > 0), col_name].values.astype(np.float64)
         # x = df_zone.loc[(df_zone['months_passed_01_2021'] > 0), 'months_passed_01_2021'].values.astype(np.float64)
         # y = df_zone.loc[(df_zone['months_passed_01_2021'] > 0), '2021-2024_Total_EV_Sales'].values.astype(np.float64)
         if x.size == 0 or y.size == 0:
