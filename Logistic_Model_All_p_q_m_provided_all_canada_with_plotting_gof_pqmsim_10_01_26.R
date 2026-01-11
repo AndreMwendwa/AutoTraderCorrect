@@ -5,16 +5,25 @@ library(MASS)       # for mvrnorm()
 
 set.seed(123)
 
+# Column name parameters
+time_var  <- "months_since_start"
+sales_var <- "VALUE"
+
 # 0) Set up folders and file names
-output_folder <- "all_canada_logistic_07_01_2026"
+# Info for files to be saved
+date <- "10_01_26"
+
+# Folder to save plots and sims
+output_folder <- paste0("logistic_all_canada_m_estimated_", date)
 if (!dir.exists(output_folder)) dir.create(output_folder)
 
-txt_file_name <- "results_txt_logistic_all_canada_07_01_2026.txt"
-csv_name      <- "results_csv_logistic_all_canada_07_01_2026.csv"
+# File names
+txt_file_name <- paste0("results_log_all_canada_m_estimated_", date, ".txt")
+csv_name      <- paste0("results_log_all_canada_m_estimated_", date, ".csv")
 
 # 1) Read input data
-bass_input <- read_csv("Revision_2\\bass_input_all_canada_new_used_with_tesla.csv")
-start_params <- read_csv("best_parameter_start_values_all_canada_logistic.csv")
+bass_input <- read_csv("Revision_2\\canada_bev_data_train.csv")
+start_params <- read_csv("best_parameter_start_values_reg_data_log.csv")
 
 # 2) Define the logistic cumulative‐adoption function
 logistic <- function(t, a, b, c) {
@@ -34,10 +43,10 @@ results_df <- tibble(
 
 # 4) Filter out t = 0
 input_data <- bass_input %>%
-  filter((months_passed_01_2021 > 0) | (`2021-2024_Total_EV_Sales` > 0)) |> 
-  mutate(cumsum_21_24 = cumsum(`2021-2024_Total_EV_Sales`))
+  filter((.data[[time_var]] > 0) | (.data[[sales_var]] > 0)) |> 
+  mutate(cumsum_21_24 = cumsum(.data[[sales_var]]))
 
-input_data$months_passed_01_2021 = input_data$months_passed_01_2021 + abs(min(input_data$months_passed_01_2021))
+input_data[[time_var]] = input_data[[time_var]] + abs(min(input_data[[time_var]]))
 
 a_start <- start_params %>% pull(a)
 b_start <- start_params %>% pull(b)
@@ -46,7 +55,9 @@ c_start <- start_params |> pull(c)
 # 5) Fit the three parameters a, b, and c
 fit <- tryCatch(
   nls(
-    formula   = cumsum_21_24 ~ logistic(months_passed_01_2021, a, b, c),
+    formula   = as.formula(
+      paste0("cumsum_21_24 ~ logistic(", time_var, ", a, b, c)")
+    ),
     data      = input_data,
     start     = list(
       a = a_start,  
@@ -76,7 +87,7 @@ if (!is.null(fit)) {
   # browser()
   # write.csv(predicted, "log_predictions_05_01_2026_b.csv")
   predicted     <- c(predicted_cum[1], diff(predicted_cum))  # per-period
-  observed      <- input_data$`2021-2024_Total_EV_Sales`                    # per-period actual
+  observed      <- input_data[[sales_var]]                    # per-period actual
   
   # Ignore first period
   predicted <- predicted[-1]
@@ -123,8 +134,8 @@ if (!is.null(fit)) {
     mutate(predicted = c(predicted_cum[1], diff(predicted_cum))) %>%
     slice(-1)  # drop first period
   
-  p_plot <- ggplot(plot_df, aes(x = months_passed_01_2021)) +
-    geom_line(aes(y = `2021-2024_Total_EV_Sales`, color = "Observed")) +
+  p_plot <- ggplot(plot_df, aes(x = .data[[time_var]])) +
+    geom_line(aes(y = .data[[sales_var]], color = "Observed")) +
     geom_line(aes(y = predicted,    color = "Fitted")) +
     labs(
       title = "All Canada: Logistic Fit (Per-Period, excluding first)",

@@ -3,12 +3,14 @@ library(readr)
 library(ggplot2)
 library(MASS)       # for mvrnorm()
 
+set.seed(123)
+
 # Info for files to be saved
-date <- "07_06_26_older_vehicles"
+date <- "10_01_26"
 
 # Column name parameters
-time_var  <- "months_passed_01_2017"
-sales_var <- "2017-2020_Total_EV_Sales"
+time_var  <- "months_since_start"
+sales_var <- "VALUE"
 
 # Folder to save plots and sims
 output_folder <- paste0("bass_all_canada_m_estimated_", date)
@@ -19,8 +21,8 @@ txt_file_name <- paste0("results_bass_all_canada_m_estimated_", date, ".txt")
 csv_name      <- paste0("results_bass_all_canada_m_estimated_", date, ".csv")
 
 # Read input data
-bass_input   <- read_csv("Revision_2\\bass_input_all_canada_new_with_tesla_b.csv")
-start_params <- read_csv("best_parameter_start_values_all_canada_17_20.csv")
+bass_input   <- read_csv("Revision_2\\canada_bev_data_train.csv")
+start_params <- read_csv("best_parameter_start_values_reg_data_bass.csv")
 # m_value    <- 38646      
 
 # Bass model function
@@ -109,7 +111,7 @@ colnames(param_sims) <- c("p","q","m")
 sim_df <- as_tibble(param_sims)
 write_csv(
   sim_df,
-  file.path(output_folder, "all_canada_param_sims_05_01_26.csv")
+  file.path(output_folder, "all_canada_param_sims.csv")
 )
 
 # 5) plot observed vs predicted
