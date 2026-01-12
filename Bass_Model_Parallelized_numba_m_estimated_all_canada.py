@@ -1,3 +1,4 @@
+
 import pygmo as pg
 import pandas as pd
 import numpy as np
@@ -24,19 +25,26 @@ def fitness_nb(dv, x_data, y_data):
         num = 1.0 - (p + q)
         denom = 1.0 + (p + q) + 1e-10
         p_safe = p + 1e-10
-        term1 = (1.0 - (num/denom)**(x + 1) / 2.0) / (1.0 + (q / p_safe) * ((num/denom)**(x + 1) / 2.0))
-        term2 = (1.0 - (num/denom)**(x - 1) / 2.0) / (1.0 + (q / p_safe) * ((num/denom)**(x - 1) / 2.0))
+
+        # --- Corrected Bass increment using half-step exponents ---
+        # (num/denom)**((x ± 1)/2.0)  instead of  (num/denom)**(x ± 1) / 2.0
+        a_pow_plus  = (num / denom) ** ((x + 1) / 2.0)
+        a_pow_minus = (num / denom) ** ((x - 1) / 2.0)
+
+        term1 = (1.0 - a_pow_plus)  / (1.0 + (q / p_safe) * a_pow_plus)
+        term2 = (1.0 - a_pow_minus) / (1.0 + (q / p_safe) * a_pow_minus)
         pred = m * (term1 - term2)
+
         diff = y_data[i] - pred
         rss += diff * diff
     return rss
+
 
 class PyGMOBassProblem:
     def __init__(self, x, y):
         # assume x and y are numpy.float64 arrays
         self.x_data = x
         self.y_data = y
-
 
     def fitness(self, dv):
         # Call the jitted function and return a 1-element list for PyGMO
@@ -46,6 +54,7 @@ class PyGMOBassProblem:
     def get_bounds(self):
         # p and q between 0 and 1
         return ([0.0, 0.0, 1.0], [1.0, 1.0, 10000000.0])
+
 
 def main(output_filename, bass_input_name, col_name='2021-2024_Total_EV_Sales', months_col='months_passed_01_2021'):
     # Read input data
@@ -58,14 +67,23 @@ def main(output_filename, bass_input_name, col_name='2021-2024_Total_EV_Sales', 
     POPULATION_SIZE = 2000
 
     results = []
-
     for zone in bass_input['ZoneID'].unique():
         print(time.ctime())
         df_zone = bass_input[bass_input['ZoneID'] == zone]
-        x = df_zone.loc[(df_zone[months_col] > 0)|(df_zone[col_name] > 0), months_col].values.astype(np.float64)
-        y = df_zone.loc[(df_zone[months_col] > 0)|(df_zone[col_name] > 0), col_name].values.astype(np.float64)
+
+        x = df_zone.loc[
+            (df_zone[months_col] > 0) & (df_zone[col_name] > 0),
+            months_col
+        ].values.astype(np.float64)
+
+        y = df_zone.loc[
+            (df_zone[months_col] > 0) & (df_zone[col_name] > 0),
+            col_name
+        ].values.astype(np.float64)
+
         # x = df_zone.loc[(df_zone['months_passed_01_2021'] > 0), 'months_passed_01_2021'].values.astype(np.float64)
         # y = df_zone.loc[(df_zone['months_passed_01_2021'] > 0), '2021-2024_Total_EV_Sales'].values.astype(np.float64)
+
         if x.size == 0 or y.size == 0:
             print(f"No data for zone {zone}, skipping.")
             continue
@@ -74,6 +92,7 @@ def main(output_filename, bass_input_name, col_name='2021-2024_Total_EV_Sales', 
         problem = pg.problem(PyGMOBassProblem(x, y))
         algo = pg.algorithm(pg.pso(gen=PSO_GENERATIONS))
         archi = pg.archipelago(n=64, algo=algo, prob=problem, pop_size=POPULATION_SIZE)
+
         archi.evolve()
         archi.wait()
 
@@ -86,16 +105,18 @@ def main(output_filename, bass_input_name, col_name='2021-2024_Total_EV_Sales', 
         results.append({'ZoneID': zone, 'p': p_opt, 'q': q_opt, 'm': m_opt})
         print(f"Zone {zone}: p={p_opt:.6f}, q={q_opt:.6f}, m={m_opt:.2f}")
 
-    # Save results (p and q only)
+    # Save results (p, q, m)
     results_df = pd.DataFrame(results)
     out_file = f'best_parameter_{output_filename}.csv'
     results_df.to_csv(out_file, index=False)
-    print(f"Best parameters (p, q) saved to '{out_file}'")
+    print(f"Best parameters (p, q, m) saved to '{out_file}'")
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python Bass_Model_Parallelized_numba.py <market_size_file>")
+        print("Usage: python Bass_Model_Parallelized_numba_m_estimated_all_canada.py <output_filename> <bass_input_csv> [col_name] [months_col]")
         sys.exit(1)
+
     if len(sys.argv) == 3:
         main(sys.argv[1], sys.argv[2])
     else:

@@ -22,8 +22,10 @@ def fitness_nb(dv, x_data, y_data, m):
         num = 1.0 - (p + q)
         denom = 1.0 + (p + q) + 1e-10
         p_safe = p + 1e-10
-        term1 = (1.0 - (num/denom)**(x + 1) / 2.0) / (1.0 + (q / p_safe) * ((num/denom)**(x + 1) / 2.0))
-        term2 = (1.0 - (num/denom)**(x - 1) / 2.0) / (1.0 + (q / p_safe) * ((num/denom)**(x - 1) / 2.0))
+        # term1 = (1.0 - (num/denom)**(x + 1) / 2.0) / (1.0 + (q / p_safe) * ((num/denom)**(x + 1) / 2.0))
+        # term2 = (1.0 - (num/denom)**(x - 1) / 2.0) / (1.0 + (q / p_safe) * ((num/denom)**(x - 1) / 2.0))
+        term1 = (1.0 - (num/denom)**((x + 1) / 2.0)) / (1.0 + (q / p_safe) * ((num/denom)**((x + 1) / 2.0)))
+        term2 = (1.0 - (num/denom)**((x - 1) / 2.0)) / (1.0 + (q / p_safe) * ((num/denom)**((x - 1) / 2.0)))
         pred = m * (term1 - term2)
         diff = y_data[i] - pred
         rss += diff * diff
