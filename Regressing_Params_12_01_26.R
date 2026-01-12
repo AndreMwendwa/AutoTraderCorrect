@@ -6,7 +6,8 @@ library(readxl)
 library(forcats)
 
 # Read params and census variables file
-params_variables_census <- read_csv('.\\Revision_2\\params_variables_old_05_01_26_sales.csv') # Much better performance than new zones
+# params_variables_census <- read_csv('.\\Revision_2\\params_variables_old_05_01_26_sales.csv') # Much better performance than new zones
+params_variables_census <- read_csv('.\\Revision_2\\params_variables_old_12_01_2026_sales.csv')
 weather_data <- read_csv('weather_vars_zones.csv')
 gas_station_counts <- read_csv('gas_stations_count_old_zones.csv')
 province <- read_csv('province.csv')
@@ -39,8 +40,10 @@ params_variables_census <- inner_join(params_variables_census, search_distances)
 
 
 # ## File for storing results
-txt_conn <- file("bass_model_explanatory_vars_07_01_26.txt", open = "wt")
-date <- "_06_01_26.csv"
+date <- "12_01_26_correct_bass_formula"
+
+txt_conn <- file(paste0("bass_model_explanatory_vars_", date, ".txt"), open = "wt")
+
 
 
 # Initial log-normal regression
@@ -55,7 +58,7 @@ params_variables_census <- params_variables_census |>
     PR_factor = as.factor(Province),
     PR_factor = fct_relevel(PR_factor, "BritishColumbia"),
     pr_BC = if_else(Province == 'BritishColumbia', 1, 0), 
-    pr_ON = if_else(Province == 'Ontario', 1, 0),
+    pr_ON = as.factor(if_else(Province == 'Ontario', 1, 0)),
     pr_QC = if_else(Province == 'Quebec', 1, 0), 
     pr_NS = if_else(Province == "NovaScotia", 1, 0),
     inc_BC = if_else(Province == 'BritishColumbia', COL5, 0), 
@@ -76,13 +79,14 @@ params_variables_census <- params_variables_census |>
 
 ## equation vars
 p_vars <- c(
-  "median_zonal_age",
-  "avg_distance_weighted"
-  #, "COL5"    # income: vif too high with this
+  "median_zonal_age"
+   , "pr_ON"
+  # "avg_distance_weighted"  # Not significant
+  # , "COL5"    # income: vif too high with this
   # , "popn_density"  # vif too high with this
   # , "PR_factor"   # all provinces not significant
   # , "MEAN_TEMPERATURE"   # min temp performs slightly better
-  , "MIN_TEMPERATURE"
+  # , "MIN_TEMPERATURE"
   # , "charging_stations_per_capita"  # not significant, high VIF
   # , "charging_stations_per_sqkm"   # not significant, high VIF
   # , "gas_stations_count"   # high VIF
@@ -90,8 +94,8 @@ p_vars <- c(
   # , "weighted_avg_subsidy"  # high VIF
   # , "prop_engineers"    # wrong sign, high VIF
   # , "prop_agric"    # wrong sign, high VIF
-  # , "prop_arts"   # wrong sign, high VIF
-  # , "pct_condominium"   # wrong sign, high VIF
+  # , "prop_arts"   # wrong sign
+  , "pct_condominium"   # wrong sign, high VIF
   # , "pct_new"    # high VIF
   # , "Residentia"  # high VIF
   # , "OpenArea_O"  # high VIF

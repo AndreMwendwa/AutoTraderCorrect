@@ -6,7 +6,7 @@ library(MASS)       # for mvrnorm()
 set.seed(123)
 
 # Info for files to be saved
-date <- "10_01_26"
+date <- "11_01_26"
 
 # Column name parameters
 time_var  <- "months_since_start"
@@ -30,10 +30,11 @@ c_t <- function(x, p, q, m) {
   num   <- 1 - (p + q)
   denom <- 1 + (p + q)
   m * (
-    ((1 - ((num/denom)^(x + 1))/2) / (1 + (q/p) * ((num/denom)^(x + 1))/2)) -
-      ((1 - ((num/denom)^(x - 1))/2) / (1 + (q/p) * ((num/denom)^(x - 1))/2))
+    ((1 - ((num/denom)^((x + 1)/2))) / (1 + (q/p) * ((num/denom)^((x + 1)/2)))) -
+      ((1 - ((num/denom)^((x - 1)/2))) / (1 + (q/p) * ((num/denom)^((x - 1)/2))))
   )
 }
+
 
 # Initialize results DataFrame
 results_df <- tibble(
