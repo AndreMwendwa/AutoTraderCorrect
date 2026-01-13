@@ -198,7 +198,7 @@ cat(paste(capture_output, collapse = "\n"), "\n\n", file = txt_conn)
 
 # Save coeffs to csv
 coef_mat_p <- p_summary$coefficients
-write.csv(coef_mat_p, paste0("p_regression_weighted_results", date))
+write.csv(coef_mat_p, paste0("p_regression_weighted_results", date, ".csv"))
 
 
 
@@ -223,7 +223,7 @@ cat(paste(capture_output, collapse = "\n"), "\n\n", file = txt_conn)
 
 # Save coeffs to csv
 coef_mat_q <- q_summary$coefficients
-write.csv(coef_mat_q, paste0("q_regression_weighted_results", date))
+write.csv(coef_mat_q, paste0("q_regression_weighted_results", date, ".csv"))
 
 
 # # Close the text file connection
