@@ -7,6 +7,7 @@ Order of running files for the zonal model:
 - Bass_Model_Data_Prep4.ipynb
 - Bass_Model_Parallelized_numba_zonal_sales.py
 - Bass_Model_All_p_q_m_provided_with_plotting_gof_05_01_26.R
+- ClimateData.ipynb
 - Merging_census_zones.ipynb
 - charging_stns_per_area.ipynb
 - Zonal_search_distances.ipynb
